@@ -7,6 +7,8 @@ import { connect } from 'react-redux'
 import { getUser } from '../../actions/user'
 import * as ImagePicker from 'expo-image-picker'
 import { uploadPhoto } from '../../actions/index'
+import { updateNextPhoto } from '../../actions/post'
+import { FontAwesome } from '@expo/vector-icons'
 
 const screenWidth = Dimensions.get('window').width
 const screenHeight = Dimensions.get('window').height
@@ -14,7 +16,7 @@ const screenHeight = Dimensions.get('window').height
 class PostScreen extends React.Component {
   
   state = {
-    url: undefined
+    urlChosen: undefined
   }
   
   openLibrary = async () => {
@@ -26,12 +28,18 @@ class PostScreen extends React.Component {
         })
         if (!image.cancelled) {
           const url = await this.props.uploadPhoto(image)
-          this.setState({url: url})
+          // this.setState({url: url})
+          this.props.updateNextPhoto(url)
+          this.setState({urlChosen: url})
         }
       }
     } catch (e) {
       alert(e)
     }
+  }
+
+  changeChosenURL = (url) => {
+    this.setState({urlChosen: url})
   }
   
     render(){
@@ -46,22 +54,47 @@ class PostScreen extends React.Component {
               
               <View style={{ width: screenWidth, height: 360, }}>
                 {
-                  (this.state.url === undefined) ?
-                  <Image source={require('../../assets/backgrounds/far.jpg')} style={{ width: screenWidth, height: 360 }} />
+                  (this.props.post.photos == undefined) ?
+                  <View style={{ width: screenWidth, height: 360, justifyContent: 'center', alignItems: 'center' }} >
+                    <TouchableOpacity onPress={() => this.openLibrary()} style={{ width: 65, height: 65, borderRadius: 65/2, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center' }}>
+                      <Text style={{ color: 'white', fontSize: 40 }}>+</Text>
+                    </TouchableOpacity> 
+                  </View>
                   :
-                  <Image source={{ uri: this.state.url }} style={{ width: screenWidth, height: 360 }} />
+                  <View style={{ width: screenWidth, height: 360 }}>
+                    <Image source={{ uri: this.state.urlChosen }} style={{ width: screenWidth, height: 360 }} />
+                    <TouchableOpacity onPress={() => this.removeImage(this.state.urlChosen)}
+                      style={{ position: 'absolute', bottom: 10, right: 10 }}
+                    >
+                      <FontAwesome name="trash" color={"balck"} size={25} />
+                    </TouchableOpacity>
+                  </View>
                 }
               </View>
               
               <View style={{ flexDirection: 'row', width: screenWidth, justifyContent: 'center', alignItems: 'center' }}>
+
+                {
+                  (this.props.post.photos == undefined || this.props.post.photos?.length == 3) ? null :
                 <TouchableOpacity 
-                  style={{ width: 95, height: 90, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center', borderRadius: 5 }}
+                  style={{ width: 95, height: 90, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center', borderRadius: 12, margin: 5 }}
                   onPress={()=> this.openLibrary()}
                 >
                   <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center' }}>
                     <Text style={{ color: 'white', fontSize: 30 }}>+</Text>
                   </View>
                 </TouchableOpacity>
+                }
+
+                {
+                  this.props.post.photos?.map(e=> 
+                      <TouchableOpacity
+                        onPress={() => this.changeChosenURL(e)}
+                      >
+                        <Image source={{ uri: e }} style={{ width: 95, height: 90, backgroundColor: 'rgba(0, 0, 0, 0.1)', margin: 5 }} />
+                      </TouchableOpacity>
+                    )
+                }
               </View>
           </SafeAreaView>
       )
@@ -69,11 +102,12 @@ class PostScreen extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getUser, uploadPhoto }, dispatch)
+  return bindActionCreators({ getUser, uploadPhoto, updateNextPhoto }, dispatch)
 }
 const mapStateToProps = (state) => {
   return{
     user: state.user,
+    post: state.post
   }
 }
 
