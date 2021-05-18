@@ -14,11 +14,15 @@ export const updateUsername = (input) => {
 	return {type:'UPDATE_USERNAME', payload: input}
 }
 
+export const updatePhoto = (input) => {
+	return {type: 'UPDATE_PHOTO', payload: input}
+}
+
 
 export const signup = () =>{
 	return async (dispatch, getState) => {
 		try{
-			const { username, email, password, } = getState().user
+			const { username, email, password, photo } = getState().user
 			const response = await firebase.auth().createUserWithEmailAndPassword(email,password)
 
 			if(response.user.uid){
@@ -30,7 +34,7 @@ export const signup = () =>{
 					posts: [],
 					bio: '',
 					likes:0,
-					photo: ''
+					photo: photo
 				}
 				await db.collection('users').doc(response.user.uid).set(user)
 				dispatch({type: 'LOGIN', payload: user})

@@ -26,8 +26,8 @@ class Signup extends React.Component {
   render(){
     return (
       <View style={{   flex: 1,   alignItems: 'center',  }}>
-            <Image source={require('../../assets/backgrounds/far.jpg')} style={{   position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+50}} />
-            <View style={{ flex: 1, position: 'absolute', zIndex: -1, width: screenWidth, height: screenHeight+50, backgroundColor: 'rgba(219, 219, 219, 0.6)' }} />
+            <Image source={require('../../assets/backgrounds/far.jpg')} style={{   position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+60}} />
+            <View style={{ flex: 1, position: 'absolute', zIndex: -1, width: screenWidth, height: screenHeight+60, backgroundColor: 'rgba(219, 219, 219, 0.6)' }} />
             <Text style={{fontSize:35, fontFamily:'logo-font', marginVertical:60, color:'white'}}>Insta</Text>
             <View style={{width:screenWidth*0.9,  marginTop:10, }}>
                 <Text style={{left:15}}>Username</Text>

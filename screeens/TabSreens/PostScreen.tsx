@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { getUser } from '../../actions/user'
 import * as ImagePicker from 'expo-image-picker'
 import { uploadPhoto } from '../../actions/index'
-import { updateNextPhoto } from '../../actions/post'
+import { updateNextPhoto, removeImage } from '../../actions/post'
 import { FontAwesome } from '@expo/vector-icons'
 
 const screenWidth = Dimensions.get('window').width
@@ -41,20 +41,34 @@ class PostScreen extends React.Component {
   changeChosenURL = (url) => {
     this.setState({urlChosen: url})
   }
+
+  removeImage = (url) => {
+    const position = this.props.post.photos.indexOf(url)
+    this.props.removeImage(position)
+    if (this.props.post.photos.length == 2) {
+      this.setState({urlChosen: this.props.post.photos[0]})
+    } else {
+      this.setState({urlChosen: undefined})
+    }
+  }
+
+  uploadPost = () => {
+    this.props.navigation.navigate("PostCheckout")
+  }
   
     render(){
       return(
           <SafeAreaView style={{ flex: 1 }}>
               <View style={ (Platform.OS == 'ios') ? { width: screenWidth, height: 55, borderBottomColor: 'grey', borderBottomWidth: 1} : { width: screenWidth, height: 55, borderBottomColor: 'blue', borderBottomWidth: 1, marginTop: 30, justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row'}}>
                   <Text style={{ margin: 10, fontWeight: 'bold', fontSize: 22 }}>Create a new post</Text>
-                  <TouchableOpacity style={{ margin: 10 }}>
-                      <Text style={{ margin: 10, fontWeight: 'bold', fontSize: 22, color: 'blue' }}>Upload</Text>
+                  <TouchableOpacity style={{ margin: 10 }} onPress={() => this.uploadPost()}>
+                      <Text style={{ margin: 10, fontWeight: 'bold', fontSize: 22, color: 'blue' }}>Post</Text>
                   </TouchableOpacity>
               </View>
               
               <View style={{ width: screenWidth, height: 360, }}>
                 {
-                  (this.props.post.photos == undefined) ?
+                  (this.state.urlChosen == undefined) ?
                   <View style={{ width: screenWidth, height: 360, justifyContent: 'center', alignItems: 'center' }} >
                     <TouchableOpacity onPress={() => this.openLibrary()} style={{ width: 65, height: 65, borderRadius: 65/2, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center' }}>
                       <Text style={{ color: 'white', fontSize: 40 }}>+</Text>
@@ -75,7 +89,7 @@ class PostScreen extends React.Component {
               <View style={{ flexDirection: 'row', width: screenWidth, justifyContent: 'center', alignItems: 'center' }}>
 
                 {
-                  (this.props.post.photos == undefined || this.props.post.photos?.length == 3) ? null :
+                  (this.props.post.photos == undefined || this.props.post.photos?.length == 3 || this.props.post.photos?.length == 0) ? null :
                 <TouchableOpacity 
                   style={{ width: 95, height: 90, backgroundColor: 'rgba(0, 0, 0, 0.1)', justifyContent: 'center', alignItems: 'center', borderRadius: 12, margin: 5 }}
                   onPress={()=> this.openLibrary()}
@@ -102,7 +116,7 @@ class PostScreen extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ getUser, uploadPhoto, updateNextPhoto }, dispatch)
+  return bindActionCreators({ getUser, uploadPhoto, updateNextPhoto, removeImage }, dispatch)
 }
 const mapStateToProps = (state) => {
   return{

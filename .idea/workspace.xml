@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83e62868-4c2c-44cc-843b-f14af7cb5ec1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/actions/post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/actions/post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/actions/user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/LoginNavigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/LoginNavigator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/StackNavigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/StackNavigator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/TabNavigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/TabNavigator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reducers/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/reducers/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screeens/AuthScreens/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screeens/AuthScreens/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screeens/AuthScreens/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screeens/AuthScreens/Signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screeens/TabSreens/HomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screeens/TabSreens/HomeScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screeens/TabSreens/PostScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screeens/TabSreens/PostScreen.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1sV9H9tHXTjVNWgVaDI8diwLEsF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83e62868-4c2c-44cc-843b-f14af7cb5ec1" name="Default Changelist" comment="" />
+      <created>1620946800015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620946800015</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="571" y="270" key="#Notifications" timestamp="1620952601477">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="571" y="270" key="#Notifications/0.22.1366.746@0.22.1366.746" timestamp="1620952601477" />
+    <state x="110" y="142" width="1146" height="506" key="AVDManager" timestamp="1620952602309">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="110" y="142" width="1146" height="506" key="AVDManager/0.22.1366.746@0.22.1366.746" timestamp="1620952602309" />
+    <state x="467" y="153" key="FileChooserDialogImpl" timestamp="1620952016603">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="467" y="153" key="FileChooserDialogImpl/0.22.1366.746@0.22.1366.746" timestamp="1620952016603" />
+    <state x="188" y="30" key="SettingsEditor" timestamp="1620951995419">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="188" y="30" key="SettingsEditor/0.22.1366.746@0.22.1366.746" timestamp="1620951995419" />
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup" timestamp="1620952084971">
+      <screen x="0" y="22" width="1366" height="746" />
+    </state>
+    <state x="346" y="88" width="672" height="678" key="search.everywhere.popup/0.22.1366.746@0.22.1366.746" timestamp="1620952084971" />
+  </component>
+</project>

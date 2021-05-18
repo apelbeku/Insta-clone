@@ -15,8 +15,8 @@ class Login extends React.Component {
   render(){
         return (
             <View style={{   flex: 1,   alignItems: 'center',}}>
-              <Image source={require('../../assets/backgrounds/alone.jpg')} style={{   position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+50}} />
-              <View style={{ backgroundColor: 'rgba(218, 219, 219, 0.6)', flex: 1, zIndex: -1, position: 'absolute', height: screenHeight+50, width: screenWidth }} />
+              <Image source={require('../../assets/backgrounds/alone.jpg')} style={{   position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+60}} />
+              <View style={{ backgroundColor: 'rgba(218, 219, 219, 0.6)', flex: 1, zIndex: -1, position: 'absolute', height: screenHeight+60, width: screenWidth }} />
               <Text style={{fontSize:35, fontFamily:'logo-font', marginVertical:60, color:'white'}}>Insta</Text>
               <View style={{marginTop:100}}>
                 <View style={{width:screenWidth*0.9,  marginTop:10, }}>
@@ -55,19 +55,16 @@ class Login extends React.Component {
                     <Text style={{color:'white', fontWeight:'bold', fontSize:20}}>LOGIN</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={{alignItems:'center', flexDirection:'row', margin:10}}
-                  onPress={()=> this.props.navigation.navigate('Signup')}>
+                  onPress={()=> this.props.navigation.navigate('ProfilePicture')}>
                     <Text style={{fontSize:18}}>Don't have an account? </Text>
                     <Text style={{fontSize:18, fontWeight:'bold', color:'#0095f6'}}>Signup!</Text>
                   </TouchableOpacity>
                   <View style={{position:'absolute', top:250, justifyContent:'center',alignItems:'center'}}>
-                    <Text style={{fontSize:18}}>from</Text>
-                    <Text style={{fontSize:20, fontWeight:'bold'}}> Antoni</Text>
+                    <Text style={{fontSize:18}}>from
+                    <Text style={{fontSize:20, fontWeight:'bold'}}> Craft</Text>
+                    </Text>
                   </View>
               </View>
-              
-              
-              
-              
             </View>
         );
     }

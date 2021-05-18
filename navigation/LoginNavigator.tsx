@@ -10,6 +10,7 @@ import Login from '../screeens/AuthScreens/Login'
 import Signup from '../screeens/AuthScreens/Signup'
 import Welcome from '../screeens/AuthScreens/Welcome'
 import StackNavigator from './StackNavigator'
+import ProfilePicture from '../screeens/AuthScreens/ProfilePicture'
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ export default function App() {
                     <Stack.Screen name='Login' component={Login}/>
                     <Stack.Screen name='Signup' component={Signup} />
                     <Stack.Screen name='StackNavigator' component={StackNavigator} />
+                    <Stack.Screen name='ProfilePicture' component={ProfilePicture} />
                 </Stack.Navigator>
             </NavigationContainer>
         )
