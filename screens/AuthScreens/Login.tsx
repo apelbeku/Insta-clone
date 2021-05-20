@@ -18,7 +18,7 @@ class Login extends React.Component {
               {/* <Image source={require('../../assets/backgrounds/back4.jpeg')} style={{   position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+50}} /> */}
               <Image source={require('../../assets/backgrounds/background-white.jpg')} style={{    justifyContent: 'center',     alignItems: 'center', position:'absolute', zIndex:-1, width:screenWidth, height:screenHeight+50,}} />
 
-              <Text style={{fontSize:35, fontFamily:'logo-font', marginVertical:60, color:'#0095f6'}}>Notaninstaclone</Text>
+              <Text style={{fontSize:35, fontFamily:'logo-font', marginVertical:60, color:'#0095f6'}}>Insta</Text>
               <View style={{marginTop:100}}>
                 <View style={{width:screenWidth*0.9,  marginTop:10, }}>
                   <Text style={{left:15}}>Email</Text>
@@ -62,13 +62,9 @@ class Login extends React.Component {
                   </TouchableOpacity>
                   <View style={{position:'absolute', top:250, justifyContent:'center',alignItems:'center'}}>
                     <Text style={{fontSize:18}}>from</Text>
-                    <Text style={{fontSize:20, fontWeight:'bold'}}> Antoni</Text>
+                    <Text style={{fontSize:20, fontWeight:'bold'}}> Craft</Text>
                   </View>
-              </View>
-              
-              
-              
-              
+              </View>              
             </View>
         );
     }

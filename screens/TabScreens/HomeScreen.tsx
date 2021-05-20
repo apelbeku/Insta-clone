@@ -32,7 +32,9 @@ class HomeScreen extends React.Component {
                         onPress={()=>this.props.navigation.navigate('SavedPosts')}>
                             <Image source={require('../../assets/images/like-red.jpg')} style={{width:25,height:25, margin:10,bottom:4}} />
                         </TouchableOpacity>
-                        <Image source={require('../../assets/images/share.jpg')} style={{width:25,height:25, margin:10, bottom:5}} />
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('MessagesScreen')}>
+                            <Image source={require('../../assets/images/share.jpg')} style={{width:25,height:25, margin:10, bottom:5}} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <FlatList

@@ -12,6 +12,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { FontAwesome } from '@expo/vector-icons'
 import { uploadPost } from '../actions/post'
+import MessagesScreen from '../screens/TabScreens/HeaderScreens/MessagesScreen';
 
 
 
@@ -25,6 +26,7 @@ class MyStack extends React.Component{
                 <Stack.Screen name="SavedPosts" component={SavedPosts}  />
                 <Stack.Screen name="OnePost" component={OnePost}  />
                 <Stack.Screen name="Edit" component={Edit}  />
+                <Stack.Screen name="MessagesScreen" component={MessagesScreen}  />
                 <Stack.Screen name="ProfileScreen" component={ProfileScreen}  options={{
                     headerStyle: {backgroundColor:'white'}
                 }}/>
